@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import Plotly from "plotly.js-dist"; // Импортируем createRoot
-import ChromatinTable from "./chromatin"; // Уберите .tsx, если вы используете TypeScript
-import Heatmap from "./plotly.tsx"; // Уберите .tsx, если вы используете TypeScript
+import Plotly from "plotly.js-dist"; 
+import ChromatinTable from "./chromatin";
+import Heatmap from "./plotly.tsx"; 
 
 const container = document.getElementById("Heatmap");
 
