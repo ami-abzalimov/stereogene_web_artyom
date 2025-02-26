@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from "react";
 import Plotly from "plotly.js-dist";
 import styled from "styled-components";
 
-// Styled Components for styling
 const ModalContainer = styled.div`
   position: fixed;
   top: 50%;
@@ -141,7 +140,6 @@ const SubModeButton = styled.button`
   }
 `;
 
-// Component definition
 const Modal = ({
   isVisible,
   onClose,
@@ -165,7 +163,6 @@ const Modal = ({
 
     switch (activeSubMode) {
       case "distributionOfCorrelations":
-        // Distribution of correlations - MATCHING THE PDF
         data = [
           {
             x: [
