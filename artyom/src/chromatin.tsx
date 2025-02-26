@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./App.css"; // Предполагается, что у вас есть CSS файл
+import "./App.css"; 
 
 function ChromatinTable() {
   const [tableData, setTableData] = useState([]);
@@ -12,13 +12,13 @@ function ChromatinTable() {
         const response = await fetch("data.json");
         if (!response.ok) throw new Error("Network response was not ok");
         const data = await response.json();
-        console.log("Data loaded successfully:", data); // Лог загруженных данных
+        console.log("Data loaded successfully:", data);
         setTableData(data);
 
         const linksResponse = await fetch("links.json");
         if (!linksResponse.ok) throw new Error("Network response was not ok");
         const links = await linksResponse.json();
-        console.log("Links loaded successfully:", links); // Лог загруженных ссылок
+        console.log("Links loaded successfully:", links); 
         setLinksData(links);
       } catch (error) {
         console.error("Ошибка при загрузке данных:", error);
@@ -33,18 +33,18 @@ function ChromatinTable() {
   }
 
   const handleColumnToggle = (index) => {
-    console.log("Column toggle:", index); // Лог переключения столбца
+    console.log("Column toggle:", index); 
     setActiveColumnIndex(activeColumnIndex === index ? null : index);
   };
 
   const handleRowDelete = (rowIndex) => {
-    console.log("Row delete:", rowIndex); // Лог удаления строки
+    console.log("Row delete:", rowIndex); 
     const updatedTableData = tableData.filter((_, index) => index !== rowIndex);
     setTableData(updatedTableData);
   };
 
   const handleColumnDelete = (colIndex) => {
-    console.log("Column delete:", colIndex); // Лог удаления столбца
+    console.log("Column delete:", colIndex); 
     const updatedTableData = tableData.map((row) => {
       const updatedValues = row.values.filter((_, index) => index !== colIndex);
       return { ...row, values: updatedValues };
@@ -52,9 +52,9 @@ function ChromatinTable() {
     setTableData(updatedTableData);
   };
 
-  console.log("tableData:", tableData); // Лог tableData перед рендерингом
-  console.log("linksData:", linksData); // Лог linksData перед рендерингом
-  console.log("activeColumnIndex:", activeColumnIndex); // Лог activeColumnIndex перед рендерингом
+  console.log("tableData:", tableData); 
+  console.log("linksData:", linksData); 
+  console.log("activeColumnIndex:", activeColumnIndex);
 
   return (
     <main className="chromatin-table-main">
@@ -98,12 +98,12 @@ function ChromatinTable() {
             </thead>
             <tbody>
               {tableData.slice(1).map((row, rowIndex) => {
-                console.log("Row data:", row); // Лог данных строки
+                console.log("Row data:", row);
                 return (
                   <tr key={rowIndex}>
                     <td className="table-cell sticky-left">{row.name}</td>
                     {row.values.map((value, cellIndex) => {
-                      console.log("Cell data:", { rowIndex, cellIndex, value }); // Лог данных ячейки
+                      console.log("Cell data:", { rowIndex, cellIndex, value });
                       const link = linksData[rowIndex + 1]?.links[cellIndex];
 
                       return (
@@ -139,7 +139,7 @@ function ChromatinTable() {
 
           {activeColumnIndex !== null && (
             <div className="transposed-headers">
-              <h4>Транспонированные заголовки:</h4>
+              <h4>Transposed-headers:</h4>
               <table className="table">
                 <thead>
                   <tr className="table-header-row">
