@@ -11,7 +11,6 @@ function App() {
         <main>
           <Routes>
             <Route path="/K562.html" element={<Heatmap />} />{" "}
-            {/* Путь к тепловой карте */}
             <Route path="/index.html" element={<ChromatinTable />} />{" "}
             <Route path="/cell.html" element={<Cell />} />{" "}
           </Routes>
