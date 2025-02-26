@@ -13,13 +13,13 @@ function Heatmap() {
     fetch("heat.json")
       .then((response) => response.json())
       .then((data) => setHeatData(data))
-      .catch((error) => console.error("Ошибка загрузки heat.json:", error));
+      .catch((error) => console.error("Error heat.json:", error));
 
     fetch("linksheat.json")
       .then((response) => response.json())
       .then((links) => setLinksHeatData(links))
       .catch((error) =>
-        console.error("Ошибка загрузки linksheat.json:", error)
+        console.error("Error linksheat.json:", error)
       );
   }, []);
 
