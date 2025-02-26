@@ -203,7 +203,6 @@ const Modal = ({
         };
         break;
       case "crossCorrelation":
-        // Cross-correlation function
         data = [
           {
             x: [-10, -5, 0, 5, 10],
@@ -289,7 +288,7 @@ const Modal = ({
               0.4, 0.6, 0.8, 1.0, -0.4, -0.2, 0.0, 0.2, 0.4, 0.6, 0.8, 1.0,
             ],
             type: "bar",
-            marker: { color: "teal" }, // You can change the color as needed
+            marker: { color: "teal" }, 
           },
         ];
 
